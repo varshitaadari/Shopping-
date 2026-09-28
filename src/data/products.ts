@@ -1,0 +1,796 @@
+import { Product } from '../types';
+
+export const SAMPLE_PRODUCTS: Product[] = [
+  // 1. Electronics
+  {
+    id: 'elec-1',
+    name: 'AuraSound Spatial Wireless Headphones',
+    category: 'Electronics',
+    brand: 'AuraSound',
+    price: 129,
+    originalPrice: 199,
+    discountPercentage: 35,
+    rating: 4.8,
+    reviewCount: 342,
+    description: 'Active Noise Cancellation with 40mm titanium diaphragm drivers. 48-hour battery playback with ultra-low latency spatial sound stage.',
+    inStock: true,
+    stockCount: 18,
+    colors: [
+      { name: 'Matte Obsidian', hex: '#1e293b' },
+      { name: 'Warm Silver', hex: '#cbd5e1' },
+      { name: 'Midnight Navy', hex: '#0f172a' }
+    ],
+    featured: true,
+    popular: true,
+    badge: 'Best Seller',
+    iconType: 'headphones'
+  },
+  {
+    id: 'elec-2',
+    name: 'Pulse360 Waterproof Bluetooth Speaker',
+    category: 'Electronics',
+    brand: 'PulseSound',
+    price: 69,
+    originalPrice: 99,
+    discountPercentage: 30,
+    rating: 4.6,
+    reviewCount: 215,
+    description: 'Deep 360-degree acoustic dispersion with dual passive radiators and IPX7 complete waterproof submersibility.',
+    inStock: true,
+    stockCount: 25,
+    colors: [
+      { name: 'Charcoal', hex: '#334155' },
+      { name: 'Forest Teal', hex: '#0d9488' },
+      { name: 'Sunset Terracotta', hex: '#ea580c' }
+    ],
+    specialOffer: true,
+    badge: 'Special Offer',
+    iconType: 'speaker'
+  },
+  {
+    id: 'elec-3',
+    name: 'NovaVision 4K UHD Smart Projector',
+    category: 'Electronics',
+    brand: 'NovaTech',
+    price: 349,
+    originalPrice: 499,
+    discountPercentage: 30,
+    rating: 4.7,
+    reviewCount: 98,
+    description: 'Ultra-bright 2200 ANSI Lumens, auto keystone alignment, built-in dual 10W Harman-tuned speakers, and HDMI eARC connectivity.',
+    inStock: true,
+    stockCount: 12,
+    iconType: 'projector'
+  },
+
+  // 2. Mobiles & Tablets
+  {
+    id: 'mob-1',
+    name: 'Apex 15 Pro Smartphone 256GB',
+    category: 'Mobiles & Tablets',
+    brand: 'Apex',
+    price: 799,
+    originalPrice: 999,
+    discountPercentage: 20,
+    rating: 4.9,
+    reviewCount: 512,
+    description: '6.7-inch OLED 120Hz display powered by the NextGen 4nm Bionic processor, 50MP triple studio camera, and aerospace titanium chassis.',
+    inStock: true,
+    stockCount: 15,
+    colors: [
+      { name: 'Titanium Grey', hex: '#64748b' },
+      { name: 'Deep Onyx', hex: '#0f172a' },
+      { name: 'Desert Sand', hex: '#d97706' }
+    ],
+    featured: true,
+    popular: true,
+    badge: 'Flagship',
+    iconType: 'smartphone'
+  },
+  {
+    id: 'mob-2',
+    name: 'GlidePad Pro 11-inch Tablet',
+    category: 'Mobiles & Tablets',
+    brand: 'Glide',
+    price: 499,
+    originalPrice: 599,
+    discountPercentage: 17,
+    rating: 4.7,
+    reviewCount: 184,
+    description: 'Liquid Crystal TrueColor display, precision stylus support, quad stereo speakers, and 12-hour workday battery life.',
+    inStock: true,
+    stockCount: 20,
+    colors: [
+      { name: 'Space Grey', hex: '#475569' },
+      { name: 'Starlight', hex: '#f1f5f9' }
+    ],
+    popular: true,
+    iconType: 'tablet'
+  },
+
+  // 3. Computers & Laptops
+  {
+    id: 'comp-1',
+    name: 'VeloceBook 14 Thin & Light Ultrabook',
+    category: 'Computers & Laptops',
+    brand: 'Veloce',
+    price: 949,
+    originalPrice: 1199,
+    discountPercentage: 21,
+    rating: 4.8,
+    reviewCount: 167,
+    description: 'Weighs only 1.18kg with an edge-to-edge 2.8K OLED screen, 16-core processor, 32GB LPDDR5X RAM, and 1TB NVMe Gen4 SSD.',
+    inStock: true,
+    stockCount: 10,
+    featured: true,
+    badge: 'Top Rated',
+    iconType: 'laptop'
+  },
+  {
+    id: 'comp-2',
+    name: 'ErgoType Wireless Mechanical Keyboard',
+    category: 'Computers & Laptops',
+    brand: 'KeySmith',
+    price: 89,
+    originalPrice: 120,
+    discountPercentage: 26,
+    rating: 4.6,
+    reviewCount: 289,
+    description: 'Hot-swappable tactile brown switches, precision machined aluminum top plate, multi-device Bluetooth 5.2 pairing.',
+    inStock: true,
+    stockCount: 30,
+    specialOffer: true,
+    iconType: 'keyboard'
+  },
+
+  // 4. Fashion
+  {
+    id: 'fash-1',
+    name: 'Relaxed Tailored Linen Overshirt',
+    category: 'Fashion',
+    brand: 'Atelier Nord',
+    price: 54,
+    originalPrice: 85,
+    discountPercentage: 36,
+    rating: 4.6,
+    reviewCount: 144,
+    description: '100% French Normandy flax linen woven with breathability. Garment-washed for ultra-soft hand feel and effortless drape.',
+    inStock: true,
+    stockCount: 40,
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Sage Green', hex: '#84a98c' },
+      { name: 'Oatmeal Natural', hex: '#e2d9cc' },
+      { name: 'Deep Indigo', hex: '#1e3a8a' }
+    ],
+    featured: true,
+    popular: true,
+    iconType: 'shirt'
+  },
+  {
+    id: 'fash-2',
+    name: 'Heavyweight Loopback Cotton Hoodie',
+    category: 'Fashion',
+    brand: 'Atelier Nord',
+    price: 68,
+    originalPrice: 95,
+    discountPercentage: 28,
+    rating: 4.8,
+    reviewCount: 310,
+    description: '450 GSM combed cotton loopback fleece. Structured ribbed cuffs, lined hood without drawstrings, and kangaroo pouch pocket.',
+    inStock: true,
+    stockCount: 35,
+    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+    colors: [
+      { name: 'Heather Grey', hex: '#94a3b8' },
+      { name: 'Pitch Black', hex: '#0f172a' },
+      { name: 'Sand Drift', hex: '#d6d3d1' }
+    ],
+    badge: 'Popular',
+    iconType: 'hoodie'
+  },
+
+  // 5. Footwear
+  {
+    id: 'foot-1',
+    name: 'AeroCushion Daily Runner v3',
+    category: 'Footwear',
+    brand: 'Stratus',
+    price: 88,
+    originalPrice: 130,
+    discountPercentage: 32,
+    rating: 4.7,
+    reviewCount: 420,
+    description: 'Engineered breathable matrix mesh with dual-density supercritical nitrogen-infused foam for bouncy, fatigue-free stride.',
+    inStock: true,
+    stockCount: 22,
+    sizes: ['US 8', 'US 9', 'US 10', 'US 11', 'US 12'],
+    colors: [
+      { name: 'Triple White', hex: '#f8fafc' },
+      { name: 'Cobalt / Mint', hex: '#2563eb' },
+      { name: 'Stealth Black', hex: '#18181b' }
+    ],
+    featured: true,
+    specialOffer: true,
+    iconType: 'sneakers'
+  },
+  {
+    id: 'foot-2',
+    name: 'Handcrafted Full-Grain Leather Chelsea Boots',
+    category: 'Footwear',
+    brand: 'Cobbler & Co',
+    price: 145,
+    originalPrice: 210,
+    discountPercentage: 31,
+    rating: 4.9,
+    reviewCount: 180,
+    description: 'Supple Italian pull-up calfskin leather, Goodyear welted construction, durable Vibram rubber outsole, and twin elastic gores.',
+    inStock: true,
+    stockCount: 14,
+    sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+    colors: [
+      { name: 'Cognac Brown', hex: '#78350f' },
+      { name: 'Charcoal Black', hex: '#1c1917' }
+    ],
+    badge: 'Crafted',
+    iconType: 'boots'
+  },
+
+  // 6. Beauty & Personal Care
+  {
+    id: 'beau-1',
+    name: 'Botanical Ceramide Barrier Facial Serum',
+    category: 'Beauty & Personal Care',
+    brand: 'Aura Botanica',
+    price: 36,
+    originalPrice: 52,
+    discountPercentage: 30,
+    rating: 4.9,
+    reviewCount: 630,
+    description: 'Clinically proven formula with 5 essential ceramides, hyaluronic acid complex, and soothing centella asiatica extract.',
+    inStock: true,
+    stockCount: 50,
+    featured: true,
+    popular: true,
+    badge: 'Clean Beauty',
+    iconType: 'dropper'
+  },
+  {
+    id: 'beau-2',
+    name: 'Sonic Cleansing & Microcurrent Sculptor',
+    category: 'Beauty & Personal Care',
+    brand: 'Lumina Derma',
+    price: 79,
+    originalPrice: 110,
+    discountPercentage: 28,
+    rating: 4.7,
+    reviewCount: 142,
+    description: 'Medical-grade antibacterial silicone bristles pulsing at 9,000 vibrations per minute with dual facial lifting microcurrent nodes.',
+    inStock: true,
+    stockCount: 19,
+    specialOffer: true,
+    iconType: 'skincare'
+  },
+
+  // 7. Home & Kitchen
+  {
+    id: 'home-1',
+    name: 'Artisan Pre-Seasoned Cast Iron Dutch Oven 5.5 Qt',
+    category: 'Home & Kitchen',
+    brand: 'Hearthstone',
+    price: 72,
+    originalPrice: 110,
+    discountPercentage: 34,
+    rating: 4.8,
+    reviewCount: 390,
+    description: 'Heavyweight enamel cast iron providing unmatched heat retention and uniform braising. Oven safe up to 500°F (260°C).',
+    inStock: true,
+    stockCount: 16,
+    colors: [
+      { name: 'French Cream', hex: '#fdfbf7' },
+      { name: 'Slate Teal', hex: '#115e59' },
+      { name: 'Deep Burgundy', hex: '#831843' }
+    ],
+    featured: true,
+    popular: true,
+    iconType: 'pot'
+  },
+  {
+    id: 'home-2',
+    name: 'Precision Barista Electric Gooseneck Kettle',
+    category: 'Home & Kitchen',
+    brand: 'Kaffestudio',
+    price: 64,
+    originalPrice: 89,
+    discountPercentage: 28,
+    rating: 4.7,
+    reviewCount: 220,
+    description: 'PID digital temperature control accurate to 1 degree, ergonomic counterbalanced handle, and stopwatch brew timer display.',
+    inStock: true,
+    stockCount: 25,
+    colors: [
+      { name: 'Matte Black', hex: '#1e293b' },
+      { name: 'Brushed Stainless', hex: '#94a3b8' }
+    ],
+    specialOffer: true,
+    iconType: 'kettle'
+  },
+
+  // 8. Grocery
+  {
+    id: 'groc-1',
+    name: 'Single-Estate Cold-Pressed Extra Virgin Olive Oil 500ml',
+    category: 'Grocery',
+    brand: 'Tuscan Groves',
+    price: 24,
+    originalPrice: 32,
+    discountPercentage: 25,
+    rating: 4.9,
+    reviewCount: 480,
+    description: 'Harvested from century-old Frantoio olive trees in Montepulciano. Notes of fresh cut grass, green almond, and peppery finish.',
+    inStock: true,
+    stockCount: 60,
+    popular: true,
+    badge: 'Organic',
+    iconType: 'bottle'
+  },
+  {
+    id: 'groc-2',
+    name: 'Raw Wildflower Honey & Royal Jelly Blend 400g',
+    category: 'Grocery',
+    brand: 'Meadow Gold',
+    price: 18,
+    originalPrice: 25,
+    discountPercentage: 28,
+    rating: 4.8,
+    reviewCount: 310,
+    description: 'Unfiltered, unpasteurized high-potency wildflower honey infused with pure royal jelly and propolis.',
+    inStock: true,
+    stockCount: 45,
+    iconType: 'jar'
+  },
+
+  // 9. Furniture
+  {
+    id: 'furn-1',
+    name: 'Nordic Solid Oak Minimalist Lounge Armchair',
+    category: 'Furniture',
+    brand: 'Stilform',
+    price: 289,
+    originalPrice: 399,
+    discountPercentage: 28,
+    rating: 4.8,
+    reviewCount: 110,
+    description: 'Sustainably sourced European solid oak frame finished with natural beeswax oil. Upholstered in spill-resistant textured woven boucle.',
+    inStock: true,
+    stockCount: 8,
+    colors: [
+      { name: 'Oat Boucle', hex: '#f5f5f4' },
+      { name: 'Pebble Charcoal', hex: '#44403c' }
+    ],
+    featured: true,
+    badge: 'Artisan',
+    iconType: 'chair'
+  },
+  {
+    id: 'furn-2',
+    name: 'Floating Walnut Nightstand with Wireless Charging',
+    category: 'Furniture',
+    brand: 'Stilform',
+    price: 139,
+    originalPrice: 190,
+    discountPercentage: 27,
+    rating: 4.7,
+    reviewCount: 75,
+    description: 'Wall-mounted natural American walnut side table with soft-close hidden drawer and embedded 15W Qi-fast charge tabletop pad.',
+    inStock: true,
+    stockCount: 14,
+    iconType: 'table'
+  },
+
+  // 10. Books & Stationery
+  {
+    id: 'book-1',
+    name: 'The Creative Act: A Way of Being by Rick Rubin',
+    category: 'Books & Stationery',
+    brand: 'Penguin Classics',
+    price: 22,
+    originalPrice: 30,
+    discountPercentage: 26,
+    rating: 4.9,
+    reviewCount: 890,
+    description: 'Hardcover collector edition. A timeless masterwork illuminating where creativity originates and how to cultivate artistic presence.',
+    inStock: true,
+    stockCount: 50,
+    popular: true,
+    featured: true,
+    badge: 'Bestseller',
+    iconType: 'book'
+  },
+  {
+    id: 'book-2',
+    name: 'Archival Dot-Grid Brass Fountain Pen Set',
+    category: 'Books & Stationery',
+    brand: 'Kaweco Atelier',
+    price: 45,
+    originalPrice: 65,
+    discountPercentage: 30,
+    rating: 4.8,
+    reviewCount: 195,
+    description: '160 GSM ink-proof bleed-resistant paper journal paired with solid raw machined brass medium-nib fountain pen.',
+    inStock: true,
+    stockCount: 30,
+    specialOffer: true,
+    iconType: 'pen'
+  },
+
+  // 11. Sports & Fitness
+  {
+    id: 'sport-1',
+    name: 'HexLock Quick-Adjust Dumbbell Pair (5-52.5 lbs)',
+    category: 'Sports & Fitness',
+    brand: 'TitanPeak',
+    price: 229,
+    originalPrice: 320,
+    discountPercentage: 28,
+    rating: 4.8,
+    reviewCount: 260,
+    description: 'Replaces 15 sets of weights in one compact footprint. Rapid twist-dial weight selection with aircraft steel interlocking gear system.',
+    inStock: true,
+    stockCount: 11,
+    featured: true,
+    popular: true,
+    badge: 'Gym Grade',
+    iconType: 'dumbbell'
+  },
+  {
+    id: 'sport-2',
+    name: 'Pro-Grip Alignment Natural Rubber Yoga Mat',
+    category: 'Sports & Fitness',
+    brand: 'ZenCore',
+    price: 49,
+    originalPrice: 75,
+    discountPercentage: 34,
+    rating: 4.7,
+    reviewCount: 340,
+    description: '5mm thick non-slip eco polyurethane and natural tree rubber base with laser-etched anatomical posture alignment guides.',
+    inStock: true,
+    stockCount: 35,
+    colors: [
+      { name: 'Forest Moss', hex: '#14532d' },
+      { name: 'Storm Grey', hex: '#475569' }
+    ],
+    iconType: 'mat'
+  },
+
+  // 12. Toys & Games
+  {
+    id: 'toy-1',
+    name: 'Kingdoms of Solitude Strategy Board Game',
+    category: 'Toys & Games',
+    brand: 'Apex Games',
+    price: 42,
+    originalPrice: 60,
+    discountPercentage: 30,
+    rating: 4.9,
+    reviewCount: 175,
+    description: 'Critically acclaimed cooperative engine-building board game featuring 180 custom wooden meeples, double-thick linen game board.',
+    inStock: true,
+    stockCount: 20,
+    popular: true,
+    iconType: 'game'
+  },
+  {
+    id: 'toy-2',
+    name: 'Architectural Modular Wooden Castle Blocks (120 Pcs)',
+    category: 'Toys & Games',
+    brand: 'Woodlands',
+    price: 38,
+    originalPrice: 55,
+    discountPercentage: 30,
+    rating: 4.7,
+    reviewCount: 140,
+    description: 'Non-toxic vegetable-dyed beechwood building blocks with smooth beveled edges for safe open-ended spatial creativity.',
+    inStock: true,
+    stockCount: 24,
+    iconType: 'blocks'
+  },
+
+  // 13. Baby Products
+  {
+    id: 'baby-1',
+    name: 'CloudCuddle 100% Organic Bamboo Swaddle (3-Pack)',
+    category: 'Baby Products',
+    brand: 'LittleHaven',
+    price: 29,
+    originalPrice: 42,
+    discountPercentage: 31,
+    rating: 4.9,
+    reviewCount: 450,
+    description: 'GOTS certified breathable bamboo viscose muslins. Ultra-gentle on sensitive infant skin with natural thermoregulating weave.',
+    inStock: true,
+    stockCount: 40,
+    badge: 'Gentle',
+    iconType: 'swaddle'
+  },
+  {
+    id: 'baby-2',
+    name: 'Ergonomic 4-in-1 Baby Carrier with Hip Seat',
+    category: 'Baby Products',
+    brand: 'LittleHaven',
+    price: 62,
+    originalPrice: 89,
+    discountPercentage: 30,
+    rating: 4.8,
+    reviewCount: 210,
+    description: 'Distributes weight evenly between lumbar belt and padded shoulder straps. Certified hip-healthy M-position seating.',
+    inStock: true,
+    stockCount: 18,
+    colors: [
+      { name: 'Oat Grey', hex: '#9ca3af' },
+      { name: 'Sage Mist', hex: '#6b7280' }
+    ],
+    iconType: 'carrier'
+  },
+
+  // 14. Jewellery & Accessories
+  {
+    id: 'jewel-1',
+    name: 'Sterling Silver 925 Hammered Cuff Bracelet',
+    category: 'Jewellery & Accessories',
+    brand: 'Maison Argent',
+    price: 58,
+    originalPrice: 85,
+    discountPercentage: 32,
+    rating: 4.8,
+    reviewCount: 230,
+    description: 'Solid 925 sterling silver artisan-hammered for organic light reflection. Adjustable flex fit with subtle inner engraving.',
+    inStock: true,
+    stockCount: 25,
+    featured: true,
+    badge: 'Silver 925',
+    iconType: 'bracelet'
+  },
+  {
+    id: 'jewel-2',
+    name: 'Minimalist Freshwater Pearl Layered Choker',
+    category: 'Jewellery & Accessories',
+    brand: 'Maison Argent',
+    price: 44,
+    originalPrice: 65,
+    discountPercentage: 32,
+    rating: 4.7,
+    reviewCount: 180,
+    description: 'Baroque cultured freshwater pearls hand-knotted on 18K gold vermeil delicate cable chain with lobster clasp extension.',
+    inStock: true,
+    stockCount: 22,
+    specialOffer: true,
+    iconType: 'necklace'
+  },
+
+  // 15. Watches
+  {
+    id: 'watch-1',
+    name: 'Chronos Heritage Automatic Mechanical Watch',
+    category: 'Watches',
+    brand: 'Chronos Geneve',
+    price: 219,
+    originalPrice: 340,
+    discountPercentage: 35,
+    rating: 4.9,
+    reviewCount: 310,
+    description: '24-jewel Japanese automatic caliber with 41-hour reserve. Anti-reflective sapphire crystal glass and genuine Horween leather strap.',
+    inStock: true,
+    stockCount: 15,
+    colors: [
+      { name: 'Midnight Dial / Brown Strap', hex: '#1e293b' },
+      { name: 'Polar White / Tan Strap', hex: '#f8fafc' },
+      { name: 'Emerald Green / Black Strap', hex: '#064e3b' }
+    ],
+    featured: true,
+    popular: true,
+    badge: 'Heritage',
+    iconType: 'watch'
+  },
+  {
+    id: 'watch-2',
+    name: 'AeroTrack Pro GPS Smartwatch with Heart & SpO2',
+    category: 'Watches',
+    brand: 'Chronos Geneve',
+    price: 119,
+    originalPrice: 169,
+    discountPercentage: 29,
+    rating: 4.7,
+    reviewCount: 290,
+    description: '1.4-inch AMOLED display, dual-frequency multi-satellite GPS, 14-day standby, and water resistant up to 50 meters (5 ATM).',
+    inStock: true,
+    stockCount: 28,
+    specialOffer: true,
+    iconType: 'smartwatch'
+  },
+
+  // 16. Bags & Luggage
+  {
+    id: 'bag-1',
+    name: 'Ventura 35L Water-Resistant Expandable Travel Duffel',
+    category: 'Bags & Luggage',
+    brand: 'Ventura Goods',
+    price: 74,
+    originalPrice: 115,
+    discountPercentage: 35,
+    rating: 4.8,
+    reviewCount: 380,
+    description: 'Weatherproof 900D ballistic nylon with dedicated ventilated shoe compartment, padded 16-inch laptop pocket, and luggage pass-through.',
+    inStock: true,
+    stockCount: 27,
+    colors: [
+      { name: 'Matte Slate', hex: '#334155' },
+      { name: 'Olive Green', hex: '#3f6212' },
+      { name: 'Desert Khaki', hex: '#78716c' }
+    ],
+    featured: true,
+    badge: 'Traveler Pick',
+    iconType: 'backpack'
+  },
+  {
+    id: 'bag-2',
+    name: 'Top-Grain Waxed Canvas Daily Messenger Bag',
+    category: 'Bags & Luggage',
+    brand: 'Ventura Goods',
+    price: 89,
+    originalPrice: 135,
+    discountPercentage: 34,
+    rating: 4.7,
+    reviewCount: 165,
+    description: 'Heavy 16oz water-repellent waxed canvas trimmed with pull-up saddle leather and solid antique brass buckle closures.',
+    inStock: true,
+    stockCount: 16,
+    iconType: 'briefcase'
+  },
+
+  // 17. Automotive
+  {
+    id: 'auto-1',
+    name: 'DualLens 4K Dashcam with Night Vision & GPS',
+    category: 'Automotive',
+    brand: 'RoadGuard',
+    price: 92,
+    originalPrice: 140,
+    discountPercentage: 34,
+    rating: 4.7,
+    reviewCount: 275,
+    description: 'Sony STARVIS 2 sensor front and 1080P rear dual camera with 24-hour parking monitor, collision sensor, and WiFi phone app syncing.',
+    inStock: true,
+    stockCount: 19,
+    featured: true,
+    popular: true,
+    badge: 'Security',
+    iconType: 'dashcam'
+  },
+  {
+    id: 'auto-2',
+    name: 'Cordless High-Power Tire Inflator & Power Bank',
+    category: 'Automotive',
+    brand: 'RoadGuard',
+    price: 49,
+    originalPrice: 75,
+    discountPercentage: 34,
+    rating: 4.8,
+    reviewCount: 340,
+    description: 'Pumps up to 150 PSI with preset auto-stop functionality. Built-in LED emergency spotlight and 6000mAh device charger.',
+    inStock: true,
+    stockCount: 32,
+    specialOffer: true,
+    iconType: 'inflator'
+  },
+
+  // 18. Pet Supplies
+  {
+    id: 'pet-1',
+    name: 'Orthopedic Calming Memory Foam Pet Bed',
+    category: 'Pet Supplies',
+    brand: 'Bark & Purr',
+    price: 52,
+    originalPrice: 79,
+    discountPercentage: 34,
+    rating: 4.9,
+    reviewCount: 520,
+    description: 'High-density memory foam base relieves canine hip and joint pressure. Removable water-resistant cover with faux rabbit fur texture.',
+    inStock: true,
+    stockCount: 30,
+    sizes: ['Medium (28")', 'Large (36")', 'Extra Large (44")'],
+    colors: [
+      { name: 'Warm Taupe', hex: '#a8a29e' },
+      { name: 'Charcoal Frost', hex: '#52525b' }
+    ],
+    featured: true,
+    popular: true,
+    iconType: 'petbed'
+  },
+  {
+    id: 'pet-2',
+    name: 'Smart Ultra-Quiet Stainless Steel Pet Water Fountain',
+    category: 'Pet Supplies',
+    brand: 'Bark & Purr',
+    price: 34,
+    originalPrice: 48,
+    discountPercentage: 29,
+    rating: 4.7,
+    reviewCount: 290,
+    description: '3.2L capacity food-grade 304 stainless steel fountain with quad-filtration system and whisper-quiet (<20dB) submersible water pump.',
+    inStock: true,
+    stockCount: 26,
+    iconType: 'petfountain'
+  },
+
+  // 19. Health & Wellness
+  {
+    id: 'health-1',
+    name: 'Smart Bio-Impedance Body Composition Scale',
+    category: 'Health & Wellness',
+    brand: 'VitaStat',
+    price: 45,
+    originalPrice: 70,
+    discountPercentage: 35,
+    rating: 4.8,
+    reviewCount: 410,
+    description: 'Analyzes 16 essential biometrics including body fat %, visceral fat, muscle mass, and bone density via 8 tempered ITO sensor electrodes.',
+    inStock: true,
+    stockCount: 35,
+    featured: true,
+    badge: 'Clinical Accuracy',
+    iconType: 'scale'
+  },
+  {
+    id: 'health-2',
+    name: 'Deep Tissue Cordless Percussion Massage Gun',
+    category: 'Health & Wellness',
+    brand: 'VitaStat',
+    price: 69,
+    originalPrice: 110,
+    discountPercentage: 37,
+    rating: 4.7,
+    reviewCount: 360,
+    description: 'Brushless high-torque motor delivering 12mm deep stall force. Includes 6 custom massage heads and 8-hour rechargeable lithium battery.',
+    inStock: true,
+    stockCount: 22,
+    specialOffer: true,
+    iconType: 'massagegun'
+  },
+
+  // 20. Gift Items
+  {
+    id: 'gift-1',
+    name: 'Artisanal Aromatherapy Soy Candle & Diffuser Gift Set',
+    category: 'Gift Items',
+    brand: 'Lumiere Atelier',
+    price: 39,
+    originalPrice: 60,
+    discountPercentage: 35,
+    rating: 4.9,
+    reviewCount: 280,
+    description: 'Hand-poured 100% soy wax candle with wooden crackling wick paired with black reed diffuser in frosted glass vessels. Cedar & amber notes.',
+    inStock: true,
+    stockCount: 38,
+    featured: true,
+    popular: true,
+    badge: 'Gift Ready Box',
+    iconType: 'candle'
+  },
+  {
+    id: 'gift-2',
+    name: 'Handcrafted Sandalwood Watch & Accessory Valet Tray',
+    category: 'Gift Items',
+    brand: 'Lumiere Atelier',
+    price: 48,
+    originalPrice: 72,
+    discountPercentage: 33,
+    rating: 4.8,
+    reviewCount: 160,
+    description: 'Sculpted from genuine aromatic sandalwood lined with soft velvet cushions for watches, keys, eyeglasses, and pocket essentials.',
+    inStock: true,
+    stockCount: 21,
+    specialOffer: true,
+    iconType: 'valet'
+  }
+];

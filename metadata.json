@@ -1,0 +1,6 @@
+{
+  "name": "SmartShop - Online Shopping Store",
+  "description": "A clean, modern, and simple online shopping experience featuring 20 curated product categories, instant search, smart filters, shopping cart, seamless checkout, and order tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
